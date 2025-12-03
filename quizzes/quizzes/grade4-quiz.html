@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grade 4 English Quiz</title>
+  <meta charset="UTF-8">
+  <style>
+    body {font-family: Arial; margin:20px;}
+    nav a {margin:10px; text-decoration:none; font-size:18px;}
+    .card {border:1px solid #ccc; padding:15px; margin:15px 0; border-radius:5px;}
+    button {background:#0059b3; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;}
+    button:hover {background:#003d80;}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="../lessons/grade4.html">Lessons</a>
+  <a href="grade4-quiz.html">Quiz</a>
+</nav>
+
+<h1>Grade 4 English Quiz</h1>
+<p>Select the correct answers and click "Submit Quiz".</p>
+
+<form id="quizForm">
+
+  <div class="card">
+    <p><b>1. A noun is the name of a ________.</b></p>
+    <input type="radio" name="q1" value="correct"> Person, place, or thing<br>
+    <input type="radio" name="q1" value="wrong"> Action<br>
+    <input type="radio" name="q1" value="wrong"> Colour<br>
+  </div>
+
+  <div class="card">
+    <p><b>2. 'He' and 'She' are examples of ________.</b></p>
+    <input type="radio" name="q2" value="correct"> Pronouns<br>
+    <input type="radio" name="q2" value="wrong"> Adjectives<br>
+    <input type="radio" name="q2" value="wrong"> Verbs<br>
+  </div>
+
+  <div class="card">
+    <p><b>3. The plural of 'Book' is ________.</b></p>
+    <input type="radio" name="q3" value="wrong"> Bookes<br>
+    <input type="radio" name="q3" value="correct"> Books<br>
+    <input type="radio" name="q3" value="wrong"> Bookies<br>
+  </div>
+
+  <div class="card">
+    <p><b>4. "The dog runs fast" — which word is an adjective?</b></p>
+    <input type="radio" name="q4" value="wrong"> dog<br>
+    <input type="radio" name="q4" value="correct"> fast<br>
+    <input type="radio" name="q4" value="wrong"> runs<br>
+  </div>
+
+  <div class="card">
+    <p><b>5. Which sentence is correct?</b></p>
+    <input type="radio" name="q5" value="correct"> She is happy.<br>
+    <input type="radio" name="q5" value="wrong"> She happy is.<br>
+    <input type="radio" name="q5" value="wrong"> Happy she is.<br>
+  </div>
+
+  <button type="button" onclick="checkScore()">Submit Quiz</button>
+</form>
+
+<h2 id="result"></h2>
+
+<script>
+function checkScore(){
+  let score = 0;
+  const answers = document.querySelectorAll('input[type="radio"]:checked');
+  answers.forEach(ans => {
+    if(ans.value === "correct") score++;
+  });
+
+  document.getElementById("result").innerHTML = 
+    "You scored " + score + " out of 5";
+}
+</script>
+
+</body>
+</html>
